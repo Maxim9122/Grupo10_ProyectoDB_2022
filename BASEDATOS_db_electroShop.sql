@@ -129,14 +129,16 @@ CREATE TABLE producto(
  )
  GO
  ---------------------------------------------
- 
+
  CREATE TABLE seguimiento_stock(
  cod_suc int ,
  cod_prod int,
  cantidad int,
  stock_min int, ---cantidad minima de mercaderias---
- Constraint PK_sucursal_stock PRIMARY KEY ( cod_suc, cod_prod))
- GO
+ Constraint PK_sucursal_stock PRIMARY KEY ( cod_suc, cod_prod),
+ Constraint FK_cod_sucu FOREIGN KEY (cod_suc)  REFERENCES  sucursal (cod_suc),
+ Constraint FK_cod_produc FOREIGN KEY (cod_prod)  REFERENCES  producto (cod_prod))
+GO
  ---------------------------------------------
 
 CREATE TABLE Tipo_Pago (
