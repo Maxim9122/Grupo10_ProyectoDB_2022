@@ -89,25 +89,12 @@ INSERT INTO Tipo_pago (cod_pago,descripcion) VALUES (3,'EFECTIVO')
 select * from Tipo_pago;
 
 ---seguimiento_stock---
-INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (1,1,125,1)
-INSERT INTO seguimiento_stock(cod_suc, cod_prod, cantidad, stock_min) VALUES (2,1,125,1)
-INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (3,2,10,1)
-INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (4,2,21,1)
-INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (1,3,125,1)
-INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (2,4,125,1)
-INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (4,5,125,1)
-INSERT INTO seguimiento_stock (cod_suc, cod_prod,cantidad, stock_min) VALUES (4,6,125,1)
-INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (1,6,125,1)
-INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (3,7,125,1)
-INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (1,7,125,1)
-INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (2,8,125,1)
-INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (1,8,12,1)
-INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (1,9,6,1)
-INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (3,10,2,1)
-INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (1,11,45,1)
-INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (2,11,15,1)
-INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (1,12,25,1)
-INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (4,12,12,1)
+INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (1,10001,125,1)
+INSERT INTO seguimiento_stock(cod_suc, cod_prod, cantidad, stock_min) VALUES (2,10003,125,1)
+INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (3,30004,10,1)
+INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (4,40001,21,1)
+INSERT INTO seguimiento_stock (cod_suc, cod_prod, cantidad, stock_min) VALUES (1,10005,125,1)
+
 
 select * from seguimiento_stock;
 
