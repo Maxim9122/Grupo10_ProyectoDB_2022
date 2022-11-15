@@ -9,51 +9,59 @@ USE db_electro; ---me posiciona en la base de datos .
 go
 
 -------------------si ya  existe una tabla con valores elimina.
-if object_id('sucursal') is not null DROP TABLE sucursal;
-go
--------------------
-if object_id('ciudad') is not null DROP TABLE ciudad;
-go
----------------------
-if object_id('empleado') is not null DROP TABLE empleado;
-go
----------------------
-if object_id('cargo') is not null DROP TABLE cargo;
-go
----------------------
-if object_id('turno_trabajo') is not null DROP TABLE turno_trabajo
-go
----------------------
-if object_id('zona') is not null DROP TABLE zona;
-go
----------------------
-if object_id('categoria_producto') is not null DROP TABLE categoria_producto;
-go
----------------------
-if object_id('proveedor') is not null DROP TABLE proveedor;
-go
----------------------
-if object_id('producto') is not null DROP TABLE producto;
-go
----------------------
-if object_id('sucursal_stock') is not null DROP TABLE sucursal_stock;
-go
----------------------
-if object_id('venta_cabecera') is not null DROP TABLE venta_cabecera;
-go
----------------------
-if object_id('Tipo_Pago') is not null DROP TABLE Tipo_Pago;
-go
----------------------
-if object_id('venta_detalle') is not null DROP TABLE venta_detalle;
+
+if object_id('compra_detalle') is not null DROP TABLE compra_detalle;
 go
 ---------------------
 if object_id('compra_cabecera') is not null DROP TABLE compra_cabecera;
 go
 ---------------------
-if object_id('compra_detalle') is not null DROP TABLE compra_detalle;
+if object_id('venta_detalle') is not null DROP TABLE venta_detalle;
 go
 ---------------------
+if object_id('venta_cabecera') is not null DROP TABLE venta_cabecera;
+go
+---------------------
+if object_id('cliente') is not null DROP TABLE cliente;
+go
+---------------------
+if object_id('Tipo_Pago') is not null DROP TABLE Tipo_Pago;
+go
+---------------------
+go
+if object_id('seguimiento_stock') is not null DROP TABLE seguimiento_stock;
+go
+---------------------
+if object_id('producto') is not null DROP TABLE producto;
+go
+---------------------
+if object_id('proveedor') is not null DROP TABLE proveedor;
+go
+---------------------
+if object_id('categoria_producto') is not null DROP TABLE categoria_producto;
+go
+---------------------
+if object_id('sucursal') is not null DROP TABLE sucursal;
+go
+---------------------
+if object_id('empleado') is not null DROP TABLE empleado;
+---------------------
+if object_id('turno_trabajo') is not null DROP TABLE turno_trabajo
+go
+---------------------
+if object_id('cargo') is not null DROP TABLE cargo;
+go
+---------------------
+if object_id('ciudad') is not null DROP TABLE ciudad;
+go
+---------------------
+
+
+
+
+
+
+
 
 
 --Creamos las tablas de la base de datos.
@@ -179,7 +187,8 @@ cod_venta int,
 cod_prod int,
 cantidad int,
 Constraint PK_venta_detalle PRIMARY KEY ( nroLinea,cod_venta),
-Constraint FK_cod_prod FOREIGN KEY (cod_prod)  REFERENCES producto (cod_prod)
+Constraint FK_cod_prod FOREIGN KEY (cod_prod)  REFERENCES producto (cod_prod),
+Constraint FK_cabecera_detalle FOREIGN KEY (cod_venta)  REFERENCES venta_cabecera (cod_venta)
 )
 GO
 ---------------------------------------------
@@ -204,7 +213,8 @@ cod_prod int,
 cantidad int,
 Constraint PK_compra_detalle PRIMARY KEY ( cod_compra, nro_linea),
 Constraint FK_cod_produ FOREIGN KEY (cod_prod)  REFERENCES producto (cod_prod),
-)V
+Constraint FK_cabecera_detalle1 FOREIGN KEY (cod_compra)  REFERENCES compra_cabecera (cod_compra)
+)
 GO
 
 --creamos las claves (PK y FK)y relacionamos las tablas
